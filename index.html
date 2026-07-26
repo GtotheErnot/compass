@@ -142,6 +142,43 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .story-meta{font-size:11px;color:var(--muted);}
 .story-text{font-size:13px;color:var(--muted);line-height:1.7;font-family:'Lora',serif;font-style:italic;}
 .stars{color:var(--accent);font-size:13px;margin-top:8px;}
+/* Grundsatz-Block */
+.creed{margin:14px 16px 0;background:var(--bg2);border:1px solid rgba(196,150,90,0.28);border-radius:16px;padding:22px 20px;}
+.creed-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-weight:500;margin-bottom:14px;text-align:center;}
+.creed-main{font-family:'Lora',serif;font-size:21px;line-height:1.45;color:var(--text);text-align:center;margin-bottom:18px;}
+.creed-main span{display:block;}
+.creed-main span+span{margin-top:3px;}
+.creed-frame{border-top:1px solid var(--border);padding-top:14px;display:flex;flex-direction:column;gap:9px;}
+.creed-line{font-size:13px;color:var(--muted);line-height:1.55;display:flex;gap:9px;}
+.creed-line::before{content:'·';color:var(--accent);flex-shrink:0;}
+.creed-line b{color:var(--text);font-weight:500;}
+/* Grundregeln */
+.rule{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px;margin-top:10px;}
+.rule-num{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:500;margin-bottom:5px;}
+.rule-title{font-family:'Lora',serif;font-size:16px;color:var(--text);margin-bottom:6px;line-height:1.4;}
+.rule-text{font-size:13px;color:var(--muted);line-height:1.65;}
+.rule-text em{color:var(--text);font-style:italic;}
+.rule-mech{font-size:12px;color:var(--muted);line-height:1.6;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+.rule-mech b{color:var(--accent2);font-weight:500;}
+/* Sätze */
+.satz{background:var(--bg3);border-radius:10px;padding:13px 15px;margin-top:9px;border-left:3px solid var(--accent2);}
+.satz-text{font-family:'Lora',serif;font-style:italic;font-size:15px;color:var(--text);line-height:1.6;}
+.satz-when{font-size:11px;color:var(--muted);margin-top:5px;letter-spacing:0.5px;}
+/* Anker */
+.anchor{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);align-items:start;}
+.anchor:last-child{border-bottom:none;padding-bottom:0;}
+.anchor-name{font-size:13px;font-weight:500;color:var(--accent);}
+.anchor-fire{font-size:13px;color:var(--text);line-height:1.55;}
+.anchor-load{font-size:12px;color:var(--muted);line-height:1.55;margin-top:3px;}
+/* Rote Linien */
+.redline{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+.redline:last-child{border-bottom:none;padding-bottom:0;}
+.redline-mark{color:var(--accent3);font-size:13px;flex-shrink:0;margin-top:1px;}
+.redline-text{font-size:13px;color:var(--text);line-height:1.6;}
+.redline-text b{color:var(--accent3);font-weight:500;}
+/* Info-Notiz */
+.note-box{background:var(--bg3);border-radius:10px;padding:12px 14px;margin-top:14px;border-left:3px solid var(--accent4);font-size:12.5px;color:var(--muted);line-height:1.6;}
+.note-box b{color:var(--text);font-weight:500;}
 .footer{text-align:center;padding:40px 24px 20px;font-size:12px;color:var(--muted);line-height:1.8;}
 .footer em{font-family:'Lora',serif;font-style:italic;color:var(--text);font-size:13px;}
 </style>
@@ -159,22 +196,55 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
   <p class="sos-msg">Atme. Nichts fixen. Weitermachen, soweit möglich. Das hier geht vorbei.</p>
 </div>
 
+<div class="creed">
+  <p class="creed-eyebrow">Mein Grundsatz</p>
+  <p class="creed-main"><span>Temporär.</span><span>Mein Körper reguliert sich.</span><span>Nichts zu fixen.</span></p>
+  <div class="creed-frame">
+    <div class="creed-line"><span>Ich habe alles ausprobiert — <b>mein Körper ist gesund.</b></span></div>
+    <div class="creed-line"><span>Es ist „nur" das <b>hypersensitive Nervensystem</b>. Kein Defekt, sondern eine Überprotektion.</span></div>
+    <div class="creed-line"><span>Symptome sind <b>Bremsen, keine Schäden.</b> Ein Limiter, den das Gehirn setzt — er löst sich, wenn das System Sicherheit lernt.</span></div>
+    <div class="creed-line"><span><b>Maximale emotionale Neutralität = Sicherheitssignal.</b> Dann reguliert sich das System selbst.</span></div>
+    <div class="creed-line"><span>Ich bin der <b>Captain.</b> Mein Nervensystem ist nicht getrennt von mir — es nimmt Befehle von mir entgegen.</span></div>
+  </div>
+</div>
+
 <div class="section">
   <p class="section-label">Sofort-Hilfe</p>
 
   <div class="accordion open">
     <div class="accordion-header" onclick="toggle(this)">
-      <div class="acc-left"><div class="acc-icon amber">🧭</div><div><div class="acc-title">Wenn eine AP kommt</div><div class="acc-sub">Die 5 Schritte</div></div></div>
+      <div class="acc-left"><div class="acc-icon amber">🧭</div><div><div class="acc-title">Wenn eine AP kommt</div><div class="acc-sub">Die 6 Schritte</div></div></div>
       <span class="acc-arrow">▼</span>
     </div>
     <div class="accordion-body">
       <ul class="step-list">
-        <li><div class="step-num">1</div><div><div class="step-title">Neutral bleiben</div><div class="step-desc">Kein Frust, kein Analysieren, kein Vergleich. Innerer Satz: <em style="color:var(--text)">"Temporär. Mein Körper reguliert sich. Nichts zu fixen."</em></div></div></li>
-        <li><div class="step-num">2</div><div><div class="step-title">Nicht warten</div><div class="step-desc">Warten bestätigt dem Nervensystem: AP = Gefahr. Das verlängert sie. Weitermachen, soweit möglich.</div></div></li>
-        <li><div class="step-num">3</div><div><div class="step-title">Leichtes Cycling trotzdem</div><div class="step-desc">Auch wenn es sich nicht gut anfühlt. Das ist der Gegenbeweis für dein Nervensystem.</div></div></li>
-        <li><div class="step-num">4</div><div><div class="step-title">Nach 2–3 Tagen: Gym</div><div class="step-desc">Nicht wenn du "bereit" bist — weil du reingehst. 30–40 % Intensität reicht. Du zeigst: Gym ist sicher.</div></div></li>
-        <li><div class="step-num">5</div><div><div class="step-title">Keine Bedeutung geben</div><div class="step-desc">Nicht tracken wie lange. Kein Vergleich mit New York. Heute ist heute.</div></div></li>
+        <li><div class="step-num">1</div><div><div class="step-title">Erst-Check</div><div class="step-desc">Ist das eine normale Reaktion, die jeder Gesunde auch hätte? Oft ja.</div></div></li>
+        <li><div class="step-num">2</div><div><div class="step-title">Benennen, nicht analysieren</div><div class="step-desc"><em style="color:var(--text)">"Temporär. Mein Körper reguliert sich. Nichts zu fixen."</em> Kein Frust, kein Vergleich — aber auch kein erzwungener Optimismus.</div></div></li>
+        <li><div class="step-num">3</div><div><div class="step-title">1× physiological sigh</div><div class="step-desc">Zweimal kurz einatmen, lang ausatmen. Einmal. Kein Projekt draus machen.</div></div></li>
+        <li><div class="step-num">4</div><div><div class="step-title">Anker greifen</div><div class="step-desc">Ring oder Neo, 20–30 Sekunden. Nicht denken — fühlen.</div></div></li>
+        <li><div class="step-num">5</div><div><div class="step-title">Weiterhandeln</div><div class="step-desc">Neutral zurück in das, was du eh gemacht hättest. Nicht hinlegen, nicht warten, nicht beobachten. Cycling/Padel light ist erlaubt.</div></div></li>
+        <li><div class="step-num">6</div><div><div class="step-title">Sprache checken</div><div class="step-desc">Setback → Recovery checkpoint. Kein Vergleich zum letzten Mal. Nicht tracken, wie lange es dauert.</div></div></li>
       </ul>
+      <div class="note-box"><b>Die Tage danach:</b> Nach 2–3 Tagen zurück ins Gym — nicht wenn du „bereit" bist, sondern weil du reingehst. 30–40 % Intensität reicht. Du zeigst dem Nervensystem: Gym ist sicher.</div>
+      <div class="note-box"><b>Erkältung und AP werden nicht differenziert.</b> Gleiche Response.</div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggle(this)">
+      <div class="acc-left"><div class="acc-icon orange">💪</div><div><div class="acc-title">Muskelkater oder Crash?</div><div class="acc-sub">Die Unterscheidung, die alles entscheidet</div></div></div>
+      <span class="acc-arrow">▼</span>
+    </div>
+    <div class="accordion-body">
+      <div style="background:rgba(125,184,154,0.1);border-radius:10px;padding:13px 15px;margin-top:14px;border-left:3px solid var(--accent2);">
+        <div style="font-size:12px;color:var(--accent2);font-weight:500;margin-bottom:5px;">Normale Soreness = Adaption</div>
+        <div style="font-size:13px;color:var(--text);line-height:1.6;">Der Körper baut auf. <strong>Grün-Signal — weitermachen.</strong> Muskelkater ist kein Warnsignal. Ihn zu vermeiden war die Falle.</div>
+      </div>
+      <div style="background:rgba(196,122,122,0.1);border-radius:10px;padding:13px 15px;margin-top:9px;border-left:3px solid var(--accent3);">
+        <div style="font-size:12px;color:var(--accent3);font-weight:500;margin-bottom:5px;">Crash / PEM = Limit erreicht</div>
+        <div style="font-size:13px;color:var(--text);line-height:1.6;">Verzögert 24–72 h, ganzkörperlich, unverhältnismäßig zur Aktivität. <strong>Leicht zurücknehmen</strong> — nicht ins Bett.</div>
+      </div>
+      <div class="note-box">Die beiden zu verwechseln ist einer der häufigsten Gründe, im Push-Crash-Zyklus stecken zu bleiben.</div>
     </div>
   </div>
 
@@ -243,6 +313,126 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
       <div class="mantra-block"><div class="mantra-text">"Improvement usually comes from changing your response, not solving the entire mystery."</div><div class="mantra-source">Alan Gordon</div></div>
       <div class="mantra-block"><div class="mantra-text">"Stop trying to calm the symptoms. Calm yourself. The symptoms will pass."</div><div class="mantra-source">Alan Gordon</div></div>
       <div class="mantra-block"><div class="mantra-text">"This is your third chance. Get it right — balance, not maxing out."</div><div class="mantra-source">Junior, Oktober 2024</div></div>
+      <div class="mantra-block"><div class="mantra-text">„Angst ist das Benzin, nicht das Training."</div><div class="mantra-source">Anne</div></div>
+      <div class="mantra-block"><div class="mantra-text">„It's not in the way of my life — it's on the way."</div><div class="mantra-source">Adrianne, Januar 2026</div></div>
+      <div class="mantra-block"><div class="mantra-text">„Ich starte aus Gesundheit, nicht aus kaputt. Ich programmiere meinen Zustand durch das, was ich wiederhole und fühle — nicht durch das, was ich messe."</div><div class="mantra-source">Mein Satz</div></div>
+    </div>
+  </div>
+
+  <p class="section-label">Meine Glaubenssätze</p>
+
+  <div class="accordion open">
+    <div class="accordion-header" onclick="toggle(this)">
+      <div class="acc-left"><div class="acc-icon amber">🧱</div><div><div class="acc-title">Die sieben Grundregeln</div><div class="acc-sub">Das Fundament — alles andere folgt daraus</div></div></div>
+      <span class="acc-arrow">▼</span>
+    </div>
+    <div class="accordion-body">
+      <div class="rule">
+        <div class="rule-num">Grundregel 1</div>
+        <div class="rule-title">Mind lies, body tells the truth.</div>
+        <div class="rule-text">Mein Verstand lügt 95 % der Zeit, wenn ich krank bin. Mein Körper nie. Faustregel: <em>mild aber managebar → sanft weitermachen. Spürbar unangenehm → zurücknehmen.</em></div>
+        <div class="rule-mech">Nicht Watch. Nicht HR-Monitor. <b>Körper.</b></div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">Grundregel 2</div>
+        <div class="rule-title">Stay gray.</div>
+        <div class="rule-text">Kein Schwarz-Weiß — nicht beim Training, nicht beim Essen, nicht beim Analysieren. Das Mittelfeld ist die Lösung.</div>
+        <div class="rule-mech">Schwarz-Weiß trainiert die Amygdala, Grau trainiert den mPFC. <b>Grau ist kein Kompromiss, sondern Training.</b></div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">Grundregel 3</div>
+        <div class="rule-title">Neutrale Response ist genug — und mehr Neutralität ist besser.</div>
+        <div class="rule-text">Neutralität ist ein <em>Schieberegler, kein Schalter</em>. Frustration über Symptome IST Teil des Symptoms.</div>
+        <div class="rule-mech">Das NS liest jede negative Emotion als Angst. Es hört die Emotion hinter den Worten, nicht die Worte — „genervt-grau" ist nicht grau. <b>1 %-Regel:</b> Neutralität ist eine Richtung, kein Standard. Perfektionismus bei der Response ist selbst wieder Druck.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">Grundregel 4</div>
+        <div class="rule-title">Trust the body. Get out of the way.</div>
+        <div class="rule-text">Mein Körper heilt immer. Eine Wunde verschorft von allein — am Schorf kratzen ist Im-Weg-Stehen. Alles was gerade passiert, ist Heilung.</div>
+        <div class="rule-mech">Ich bin der Captain, das Schiff ist mein Nervensystem. <b>„You are health right now — you start from health, not from broken."</b> (Adrianne)</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">Grundregel 5</div>
+        <div class="rule-title">Recovery in reverse — Progress Cycles statt Hoffnungs-Achterbahn.</div>
+        <div class="rule-text">Alte Muster, die zurückkommen, sind oft das ENDE des Tunnels. Der Mechanismus: Aktivität steigern → AP kommt (erwartbar, kein Fehler) → leicht zurücknehmen, <em>nicht ins Bett</em> → Kapazität steigt → wiederholen.</div>
+        <div class="rule-mech"><b>Hope is not a strategy.</b> Genug Cycles richtig durchlaufen = gesund. 80–90 % können schnell gehen, der Unterbau braucht Monate. Cycles hören nach dem Durchbruch nicht auf.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">Grundregel 6</div>
+        <div class="rule-title">Live in the present.</div>
+        <div class="rule-text">Vergangenheit = Depression. Zukunft = Anxiety. Mein Hauptgift ist der Vergleich mit dem alten Gernot.</div>
+        <div class="rule-mech">Heute ist heute. <b>Genesungsfristen („bis Juli fit sein") sind selbst Aktivierung.</b></div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">Grundregel 7</div>
+        <div class="rule-title">The third chance.</div>
+        <div class="rule-text">Nach jeder Recovery droht der Rückfall in alte Muster. Diesmal: ausgewogen leben.</div>
+        <div class="rule-mech">Nicht vermeiden — <b>Puffer bauen.</b> Gezielt 2–3 Muster ersetzen, nicht das Leben neu erfinden.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggle(this)">
+      <div class="acc-left"><div class="acc-icon green">🗝️</div><div><div class="acc-title">Meine Sätze</div><div class="acc-sub">Wortlaut — nicht umschreiben</div></div></div>
+      <span class="acc-arrow">▼</span>
+    </div>
+    <div class="accordion-body">
+      <div class="satz"><div class="satz-text">„Temporär. Mein Körper reguliert sich. Nichts zu fixen."</div><div class="satz-when">Der Kernsatz · in jeder AP, Schritt 2</div></div>
+      <div class="satz"><div class="satz-text">„This too shall pass."</div><div class="satz-when">Miguel · die englische Kurzform desselben</div></div>
+      <div class="satz"><div class="satz-text">„Ich höre dich. Danke. Du musst das nicht."</div><div class="satz-when">An den Anteil, der übernehmen will (IFS)</div></div>
+      <div class="satz"><div class="satz-text">„Ich werde auch mit Gym gesund."</div><div class="satz-when">Mein Schlüsselsatz · gegen die Gym-Pause-Logik</div></div>
+      <div class="satz"><div class="satz-text">„Angst ist das Benzin, nicht das Training."</div><div class="satz-when">Anne · wenn Sport als Ursache verdächtigt wird</div></div>
+      <div class="satz"><div class="satz-text">„Bin ich im Weg — oder auf dem Weg?"</div><div class="satz-when">Prüffrage · bei jedem Fix-Impuls</div></div>
+      <div class="satz"><div class="satz-text">„Bring it on."</div><div class="satz-when">Wenn eine AP oder Erkältung droht: eine Gelegenheit, das NS stärker zu machen. Und es wirklich glauben, nicht nur sagen.</div></div>
+      <div class="satz"><div class="satz-text">„Ich mache das, weil ich es genieße."</div><div class="satz-when">Swap · sobald „das hilft meinem Nervensystem" auftaucht</div></div>
+      <div class="note-box"><b>Sprach-Swaps:</b> Setback → Lernphase · Rückschritt → Recovery Checkpoint · „Ich muss das fixen" → „Ich kann es sein lassen".</div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggle(this)">
+      <div class="acc-left"><div class="acc-icon blue">⚓</div><div><div class="acc-title">Meine Anker</div><div class="acc-sub">Im Guten laden, im Akuten ziehen</div></div></div>
+      <span class="acc-arrow">▼</span>
+    </div>
+    <div class="accordion-body">
+      <div style="padding-top:14px;">
+        <div class="anchor">
+          <div class="anchor-name">Ring</div>
+          <div><div class="anchor-fire">Denselben Ring berühren.</div><div class="anchor-load">Laden: berühren, während sich Kraft und Freiheit gut anfühlen.</div></div>
+        </div>
+        <div class="anchor">
+          <div class="anchor-name">Radroute</div>
+          <div><div class="anchor-fire">20–30 Sekunden reinholen.</div><div class="anchor-load">Kindheit, Wind, Beine, Tempo — fühlen, nicht denken.</div></div>
+        </div>
+        <div class="anchor">
+          <div class="anchor-name">Yoda</div>
+          <div><div class="anchor-fire">Ergänzend zum Ring.</div><div class="anchor-load">Gleiche Mechanik, zweite Assoziation.</div></div>
+        </div>
+        <div class="anchor">
+          <div class="anchor-name">Neo</div>
+          <div><div class="anchor-fire">Ruhig bleiben, während die Kugeln kommen.</div><div class="anchor-load">Symptome = das Gehirn testet, ob der Captain die Composure hält. Ruhe = Beweis, dass ich die Verantwortung trage.</div></div>
+        </div>
+      </div>
+      <div class="note-box">Je öfter im <b>guten</b> Zustand geladen, desto stärker der Zug im <b>schlechten</b>. Reine Konditionierung. Tools müssen VOR der Krise sitzen — in guten Phasen üben ist kein Luxus, es ist die Bedingung.</div>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggle(this)">
+      <div class="acc-left"><div class="acc-icon red">🚩</div><div><div class="acc-title">Meine roten Linien</div><div class="acc-sub">Wenn das passiert: Stop</div></div></div>
+      <span class="acc-arrow">▼</span>
+    </div>
+    <div class="accordion-body">
+      <div style="padding-top:14px;">
+        <div class="redline"><div class="redline-mark">✕</div><div class="redline-text">Wenn ich anfange, die Welle zu <b>vermessen</b> → Stop. Das Messen ist das Problem, nicht die Welle.</div></div>
+        <div class="redline"><div class="redline-mark">✕</div><div class="redline-text">Wenn Gym zur <b>Pflicht statt Freude</b> wird → zurück zur Frage <em>warum</em>.</div></div>
+        <div class="redline"><div class="redline-mark">✕</div><div class="redline-text">Wenn ich Reisen plane, <b>„um wegzukommen"</b> → Stop und reflektieren. Hinbewegung oder Flucht?</div></div>
+        <div class="redline"><div class="redline-mark">✕</div><div class="redline-text">Wenn ich <b>jedes Symptom analysiere</b> → das ist bereits ein Symptom.</div></div>
+        <div class="redline"><div class="redline-mark">✕</div><div class="redline-text">Wenn ich „ich bin im Rückschritt" denke → <b>manuell stoppen und reframen.</b></div></div>
+        <div class="redline"><div class="redline-mark">✕</div><div class="redline-text">Wenn ich anfange, <b>Tools zu sammeln statt anzuwenden</b> → das ist die Recherche-Version des Fix-Modus.</div></div>
+      </div>
+      <div class="note-box"><b>Symptomfreiheit ist nicht das Ziel.</b> Symptome sind die Kommunikation des Körpers. Ein Körper, der nie mehr meldet, wäre das Falsche.</div>
     </div>
   </div>
 
